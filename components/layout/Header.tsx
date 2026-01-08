@@ -14,12 +14,12 @@ async function getNavItems() {
     }
 
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ menuItems: { nodes: MenuItem[] } }>({
             query: GET_MENUS_BY_LOCATION,
             variables: { location: navigationConfig.menuLocations.header },
         });
 
-        const menuItems = data?.menusByLocation?.[0]?.menuItems || [];
+        const menuItems = data?.menuItems?.nodes || [];
         return menuItems.map((item: MenuItem) => ({
             label: item.title,
             href: item.url,

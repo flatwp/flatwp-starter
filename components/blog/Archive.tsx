@@ -89,8 +89,7 @@ export function Archive({
             {/* Main content area with optional sidebar */}
             <div className={cn(
                 'flex gap-8',
-                sidebar === 'left' && 'flex-row-reverse',
-                sidebar === 'dual' && 'justify-between'
+                sidebar === 'left' && 'flex-row-reverse'
             )}>
                 {/* Posts */}
                 <div className={cn(

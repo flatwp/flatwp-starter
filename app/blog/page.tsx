@@ -11,7 +11,7 @@ export const revalidate = 300; // Revalidate every 5 minutes
 
 async function getPosts() {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ posts: { nodes: Post[] } }>({
             query: GET_POSTS,
             variables: { first: 20 },
         });
@@ -24,7 +24,7 @@ async function getPosts() {
 
 async function getCategories() {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ categories: { nodes: Category[] } }>({
             query: GET_CATEGORIES,
         });
         return data?.categories?.nodes || [];
@@ -36,7 +36,7 @@ async function getCategories() {
 
 async function getTags() {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ tags: { nodes: Tag[] } }>({
             query: GET_TAGS,
         });
         return data?.tags?.nodes || [];

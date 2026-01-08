@@ -17,7 +17,7 @@ interface PageProps {
 
 async function getPost(slug: string, preview: boolean = false) {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ post: Post | null }>({
             query: GET_POST_BY_SLUG,
             variables: { slug },
             context: {
@@ -35,7 +35,7 @@ async function getPost(slug: string, preview: boolean = false) {
 
 export async function generateStaticParams() {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ posts: { nodes: Post[] } }>({
             query: GET_POSTS,
             variables: { first: 100 },
         });

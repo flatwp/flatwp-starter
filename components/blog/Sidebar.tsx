@@ -26,8 +26,7 @@ export function Sidebar({
     return (
         <aside
             className={cn(
-                'flex-shrink-0 space-y-8',
-                position === 'dual' ? 'w-64' : 'w-80'
+                'flex-shrink-0 space-y-8 w-80'
             )}
             style={{ width: layoutConfig.sidebar.width }}
         >

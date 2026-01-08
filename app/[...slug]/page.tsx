@@ -15,7 +15,7 @@ interface PageProps {
 
 async function getPage(slug: string, preview: boolean = false) {
     try {
-        const { data } = await getClient().query({
+        const { data } = await getClient().query<{ page: Page | null }>({
             query: GET_PAGE_BY_SLUG,
             variables: { slug: `/${slug}` },
             context: {
