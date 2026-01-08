@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { navigationConfig, siteConfig } from '@/lib/config';
 import { getClient, GET_MENUS_BY_LOCATION, type MenuItem } from '@/lib/wordpress';
 import { cn } from '@/lib/utils';
+import { HeaderSearchButton } from '@/components/search/HeaderSearchButton';
 
 async function getNavItems() {
     if (navigationConfig.sources.header === 'config') {
@@ -62,6 +63,9 @@ export async function Header() {
                             )}
                         </Link>
                     ))}
+
+                    {/* Search Button */}
+                    <HeaderSearchButton />
                 </nav>
 
                 {/* Mobile menu button placeholder */}
