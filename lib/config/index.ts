@@ -7,12 +7,16 @@ import { siteConfig } from './site.config';
 import { navigationConfig } from './navigation.config';
 import { blogConfig } from './blog.config';
 import { layoutConfig } from './layout.config';
+import { searchConfig } from './search.config';
+import { formsConfig } from './forms.config';
 
 export const config = {
     site: siteConfig,
     navigation: navigationConfig,
     blog: blogConfig,
     layout: layoutConfig,
+    search: searchConfig,
+    forms: formsConfig,
 } as const;
 
 // Re-export individual configs for direct imports
@@ -20,6 +24,8 @@ export { siteConfig } from './site.config';
 export { navigationConfig, type NavSource } from './navigation.config';
 export { blogConfig, type ArchiveLayout, type SidebarPosition } from './blog.config';
 export { layoutConfig, type PageWidth, type SidebarMode } from './layout.config';
+export { searchConfig, type SearchConfig } from './search.config';
+export { formsConfig, type FormsConfig, type WPFormsConfig } from './forms.config';
 
 // Export the unified config as default
 export default config;

@@ -16,6 +16,7 @@ import { PricingColumnBlock } from './PricingColumn';
 import { TeamBlock, TeamMemberBlock } from './Team';
 import { ImageTextBlock } from './ImageText';
 import { SectionBlock } from './Section';
+import { WPFormsBlock } from './WPFormsBlock';
 
 // Block component registry
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ block: EditorBlock; allBlocks?: EditorBlock[] }>> = {
@@ -34,6 +35,8 @@ const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ block: EditorBlock;
     'flatwp/team-member': TeamMemberBlock,
     'flatwp/image-text': ImageTextBlock,
     'flatwp/section': SectionBlock,
+    // Form plugin blocks
+    'wpforms/form-selector': WPFormsBlock,
 };
 
 // Blocks that should use renderedHtml (WordPress core blocks + wrapper blocks)
@@ -69,6 +72,8 @@ const USE_RENDERED_HTML = new Set([
     'flatwp/feature-item',
     'flatwp/faq-item',
     'flatwp/stat-item',
+    // Form plugin blocks (fallback if custom component not matched)
+    'wpforms/form-selector',
 ]);
 
 interface EditorBlockRendererProps {

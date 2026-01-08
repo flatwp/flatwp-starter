@@ -16,3 +16,4 @@ export { ImageTextBlock } from './ImageText';
 export { SectionBlock } from './Section';
 export { CoreBlockRenderer } from './CoreBlockRenderer';
 export { getIcon, iconMap } from './icons';
+export { WPFormsBlock } from './WPFormsBlock';

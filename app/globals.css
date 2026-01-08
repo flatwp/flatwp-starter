@@ -180,3 +180,159 @@
     @apply flex flex-wrap gap-4 my-6;
   }
 }
+
+/* ==========================================================================
+   WPForms Styles
+   ========================================================================== */
+
+@layer components {
+  /* Base WPForms block container */
+  .wpforms-block {
+    @apply my-8;
+  }
+
+  /*
+   * Custom Tailwind form styling
+   * Applied when formsConfig.wpforms.useDefaultStyles = false
+   */
+  .flatwp-form-tailwind .wpforms-container {
+    @apply space-y-6;
+  }
+
+  .flatwp-form-tailwind .wpforms-field {
+    @apply mb-5;
+  }
+
+  .flatwp-form-tailwind .wpforms-field-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  .flatwp-form-tailwind .wpforms-field-sublabel {
+    @apply block text-xs text-muted-foreground mt-1;
+  }
+
+  .flatwp-form-tailwind .wpforms-required-label {
+    @apply text-red-500 ml-1;
+  }
+
+  .flatwp-form-tailwind .wpforms-field-description {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+
+  /* Text inputs */
+  .flatwp-form-tailwind input[type="text"],
+  .flatwp-form-tailwind input[type="email"],
+  .flatwp-form-tailwind input[type="url"],
+  .flatwp-form-tailwind input[type="tel"],
+  .flatwp-form-tailwind input[type="number"],
+  .flatwp-form-tailwind input[type="password"],
+  .flatwp-form-tailwind input[type="date"],
+  .flatwp-form-tailwind input[type="datetime-local"] {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply placeholder:text-muted-foreground;
+    @apply transition-colors duration-200;
+  }
+
+  /* Textarea */
+  .flatwp-form-tailwind textarea {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply placeholder:text-muted-foreground resize-y min-h-[120px];
+    @apply transition-colors duration-200;
+  }
+
+  /* Select dropdowns */
+  .flatwp-form-tailwind select {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply transition-colors duration-200 cursor-pointer;
+    @apply appearance-none bg-no-repeat bg-right;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 1.5rem;
+    padding-right: 2.5rem;
+  }
+
+  /* Checkboxes and radio buttons container */
+  .flatwp-form-tailwind .wpforms-field-checkbox ul,
+  .flatwp-form-tailwind .wpforms-field-radio ul {
+    @apply space-y-2 list-none ml-0 pl-0;
+  }
+
+  .flatwp-form-tailwind .wpforms-field-checkbox li,
+  .flatwp-form-tailwind .wpforms-field-radio li {
+    @apply flex items-center gap-3;
+  }
+
+  .flatwp-form-tailwind input[type="checkbox"],
+  .flatwp-form-tailwind input[type="radio"] {
+    @apply w-5 h-5 rounded border-2 border-input bg-background text-primary;
+    @apply focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+    @apply cursor-pointer;
+  }
+
+  .flatwp-form-tailwind input[type="radio"] {
+    @apply rounded-full;
+  }
+
+  /* Submit button */
+  .flatwp-form-tailwind .wpforms-submit-container {
+    @apply mt-6;
+  }
+
+  .flatwp-form-tailwind button[type="submit"],
+  .flatwp-form-tailwind .wpforms-submit {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg;
+    @apply bg-primary text-primary-foreground font-medium;
+    @apply hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply transition-all duration-200 cursor-pointer;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Loading/spinner state */
+  .flatwp-form-tailwind .wpforms-submit-spinner {
+    @apply inline-block w-4 h-4 ml-2 border-2 border-white/20 border-t-white rounded-full animate-spin;
+  }
+
+  /* Error states */
+  .flatwp-form-tailwind .wpforms-error {
+    @apply text-red-500 text-sm mt-1;
+  }
+
+  .flatwp-form-tailwind input.wpforms-error,
+  .flatwp-form-tailwind textarea.wpforms-error,
+  .flatwp-form-tailwind select.wpforms-error {
+    @apply border-red-500 focus:ring-red-500;
+  }
+
+  /* Success message */
+  .flatwp-form-tailwind .wpforms-confirmation-container-full {
+    @apply p-6 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400;
+  }
+
+  /* Field layout - side by side columns */
+  .flatwp-form-tailwind .wpforms-field-row {
+    @apply flex flex-wrap gap-4;
+  }
+
+  .flatwp-form-tailwind .wpforms-field-row .wpforms-field {
+    @apply flex-1 min-w-[200px];
+  }
+
+  /* File upload field */
+  .flatwp-form-tailwind .wpforms-field-file-upload input[type="file"] {
+    @apply w-full px-4 py-3 rounded-lg border border-dashed border-input bg-background;
+    @apply file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0;
+    @apply file:bg-primary file:text-primary-foreground file:font-medium file:cursor-pointer;
+  }
+
+  /* Divider/page break */
+  .flatwp-form-tailwind .wpforms-pagebreak-divider {
+    @apply border-t border-border my-8;
+  }
+
+  /* GDPR/Consent field */
+  .flatwp-form-tailwind .wpforms-field-gdpr-checkbox label {
+    @apply text-sm text-muted-foreground;
+  }
+}
