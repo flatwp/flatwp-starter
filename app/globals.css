@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Default to dark mode */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+/* WordPress Block Rendered Content */
+@layer components {
+  .wp-block-rendered {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .wp-block-rendered p {
+    @apply text-lg text-gray-300 leading-relaxed mb-6;
+  }
+
+  .wp-block-rendered h1 {
+    @apply text-4xl md:text-5xl font-bold mb-6 text-white;
+  }
+
+  .wp-block-rendered h2 {
+    @apply text-3xl md:text-4xl font-bold mb-4 mt-12 text-white;
+  }
+
+  .wp-block-rendered h3 {
+    @apply text-2xl md:text-3xl font-semibold mb-3 mt-8 text-white;
+  }
+
+  .wp-block-rendered h4 {
+    @apply text-xl md:text-2xl font-semibold mb-2 mt-6 text-white;
+  }
+
+  .wp-block-rendered img {
+    @apply rounded-xl my-8 max-w-full h-auto;
+  }
+
+  .wp-block-rendered figure {
+    @apply my-8;
+  }
+
+  .wp-block-rendered figcaption {
+    @apply text-center text-sm text-gray-500 mt-2;
+  }
+
+  .wp-block-rendered ul {
+    @apply list-disc ml-6 my-4 text-gray-300 space-y-2;
+  }
+
+  .wp-block-rendered ol {
+    @apply list-decimal ml-6 my-4 text-gray-300 space-y-2;
+  }
+
+  .wp-block-rendered blockquote {
+    @apply border-l-4 border-blue-500 pl-6 my-8 italic text-xl text-gray-300;
+  }
+
+  .wp-block-rendered pre {
+    @apply bg-gray-900 rounded-xl p-6 my-8 overflow-x-auto text-sm;
+  }
+
+  .wp-block-rendered code {
+    @apply bg-gray-800 px-2 py-1 rounded text-sm text-blue-400;
+  }
+
+  .wp-block-rendered pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .wp-block-rendered a {
+    @apply text-blue-400 hover:text-blue-300 underline;
+  }
+
+  .wp-block-rendered hr {
+    @apply border-gray-700 my-12;
+  }
+
+  .wp-block-rendered table {
+    @apply w-full border-collapse my-8;
+  }
+
+  .wp-block-rendered th,
+  .wp-block-rendered td {
+    @apply border border-gray-700 px-4 py-2 text-left;
+  }
+
+  .wp-block-rendered th {
+    @apply bg-gray-800 font-semibold;
+  }
+
+  /* WordPress alignment classes */
+  .wp-block-rendered .aligncenter {
+    @apply mx-auto;
+  }
+
+  .wp-block-rendered .alignleft {
+    @apply float-left mr-6 mb-4;
+  }
+
+  .wp-block-rendered .alignright {
+    @apply float-right ml-6 mb-4;
+  }
+
+  .wp-block-rendered .alignwide {
+    @apply max-w-5xl;
+  }
+
+  .wp-block-rendered .alignfull {
+    @apply max-w-none w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw];
+  }
+
+  /* WordPress button styles */
+  .wp-block-rendered .wp-block-button__link {
+    @apply inline-flex items-center px-6 py-3 rounded-lg font-medium text-white bg-blue-600 hover:bg-blue-500 transition-colors no-underline;
+  }
+
+  .wp-block-rendered .wp-block-buttons {
+    @apply flex flex-wrap gap-4 my-6;
+  }
+}
